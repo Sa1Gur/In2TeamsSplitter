@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:in2teamssplitter="clr-namespace:In2TeamsSplitter"
              ios:Page.UseSafeArea="true"
              mc:Ignorable="d"
              x:Class="In2TeamsSplitter.MainPage">
@@ -19,7 +20,7 @@
             </CollectionView.ItemsSource>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Label Text="{Binding .}" />
+                    <in2teamssplitter:NameAndRating Name="{Binding .}" />
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
