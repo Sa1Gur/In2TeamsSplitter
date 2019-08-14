@@ -20,7 +20,7 @@
             </CollectionView.ItemsSource>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <in2teamssplitter:NameAndRating Name="{Binding .}" />
+                    <in2teamssplitter:NameAndRating Name="{Binding .}" Level="1"/>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

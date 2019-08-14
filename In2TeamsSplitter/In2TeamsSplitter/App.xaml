@@ -3,9 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:In2TeamsSplitter.ValueConverters"
              mc:Ignorable="d"
              x:Class="In2TeamsSplitter.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <local:SVGPathConverter x:Key="SVGStatusConverter" />
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

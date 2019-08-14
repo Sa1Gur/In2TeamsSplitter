@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Xamarin.Forms;
+using FFImageLoading.Forms.Platform;
 
 namespace In2TeamsSplitter.Droid
 {
@@ -20,6 +21,7 @@ namespace In2TeamsSplitter.Droid
 
             base.OnCreate(savedInstanceState);
 
+            CachedImageRenderer.Init(true);
             Forms.SetFlags("CollectionView_Experimental");//adding CollectionView support
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);

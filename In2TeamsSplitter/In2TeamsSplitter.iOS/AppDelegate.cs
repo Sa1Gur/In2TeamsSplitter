@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using FFImageLoading.Forms.Platform;
 using Foundation;
 using UIKit;
 using Xamarin.Forms;
@@ -23,6 +23,7 @@ namespace In2TeamsSplitter.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            CachedImageRenderer.Init();
             Forms.SetFlags("CollectionView_Experimental");//adding CollectionView support
 
             Forms.Init();

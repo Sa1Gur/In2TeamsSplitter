@@ -24,5 +24,13 @@ namespace In2TeamsSplitter
             get => (string)GetValue(NameProperty);
             set => SetValue(NameProperty, value);
         }
+
+        public static readonly BindableProperty LevelProperty = BindableProperty.Create(nameof(Level), typeof(int), typeof(NameAndRating), defaultBindingMode: BindingMode.TwoWay);
+
+        public int Level
+        {
+            get => (int)GetValue(LevelProperty);
+            set => SetValue(LevelProperty, value);
+        }
     }
 }

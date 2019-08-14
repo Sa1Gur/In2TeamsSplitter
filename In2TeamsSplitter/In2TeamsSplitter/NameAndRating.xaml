@@ -1,10 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Grid xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Name="_nameAndRate"
-             x:Class="In2TeamsSplitter.NameAndRating">
-    <Entry Text="{Binding Name, Source={x:Reference _nameAndRate}}"  HorizontalOptions="FillAndExpand" />
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+      mc:Ignorable="d"
+      x:Name="_nameAndRate"
+      x:Class="In2TeamsSplitter.NameAndRating">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition Width="50" />
+        <ColumnDefinition Width="50" />
+        <ColumnDefinition Width="50" />
+    </Grid.ColumnDefinitions>
+    <Entry Grid.Column="0" Text="{Binding Name, Source={x:Reference _nameAndRate}}"  HorizontalOptions="FillAndExpand" />
+    <ffsvg:SvgCachedImage Grid.Column="1" Source="{Binding Level, Source={x:Reference _nameAndRate}, Converter={StaticResource SVGStatusConverter}, ConverterParameter = 1}" />
+    <ffsvg:SvgCachedImage Grid.Column="2" Source="{Binding Level, Source={x:Reference _nameAndRate}, Converter={StaticResource SVGStatusConverter}, ConverterParameter = 2}" />
+    <ffsvg:SvgCachedImage Grid.Column="3" Source="{Binding Level, Source={x:Reference _nameAndRate}, Converter={StaticResource SVGStatusConverter}, ConverterParameter = 3}" />
 </Grid>
