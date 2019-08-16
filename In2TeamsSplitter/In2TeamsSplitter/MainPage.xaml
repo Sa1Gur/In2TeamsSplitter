@@ -9,18 +9,10 @@
              mc:Ignorable="d"
              x:Class="In2TeamsSplitter.MainPage">
     <Grid>
-        <CollectionView>
-            <CollectionView.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>First TeamMate</x:String>
-                    <x:String>Second TeamMate</x:String>
-                    <x:String>Third TeamMate</x:String>
-                </x:Array>
-
-            </CollectionView.ItemsSource>
+        <CollectionView ItemsSource="{Binding TeamMateSquad}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <in2teamssplitter:NameAndRating Name="{Binding .}" Level="1"/>
+                    <in2teamssplitter:NameAndRating Name="{Binding Name, Mode=TwoWay}" Level="{Binding Level}"/>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

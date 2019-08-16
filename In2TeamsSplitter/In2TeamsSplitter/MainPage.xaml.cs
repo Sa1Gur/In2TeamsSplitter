@@ -1,4 +1,5 @@
-﻿using System;
+﻿using In2TeamsSplitter.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -16,6 +17,8 @@ namespace In2TeamsSplitter
         public MainPage()
         {
             InitializeComponent();
+
+            BindingContext = TeamMatesViewModel.Instance.Value;
         }
     }
 }
