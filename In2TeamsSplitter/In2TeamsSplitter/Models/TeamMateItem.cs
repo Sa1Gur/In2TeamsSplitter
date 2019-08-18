@@ -1,6 +1,8 @@
-﻿using SQLite;
+﻿using In2TeamsSplitter.ViewModels;
+using SQLite;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Xamarin.Forms;
 
 namespace In2TeamsSplitter.Models
 {
@@ -37,6 +39,14 @@ namespace In2TeamsSplitter.Models
         {
             get => _level;
             set => SetPropertyValue(ref _level, value);
+        }
+
+        public Command RemoveCommand => new Command(Remove);
+
+        private void Remove()
+        {
+            TeamMatesViewModel.Instance.Value.conn.Delete(this);
+            TeamMatesViewModel.Instance.Value.TeamMateSquad.Remove(this);
         }
     }
 }

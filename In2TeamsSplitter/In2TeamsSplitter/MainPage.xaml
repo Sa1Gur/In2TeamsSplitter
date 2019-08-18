@@ -20,7 +20,7 @@
         <CollectionView ItemsSource="{Binding TeamMateSquad}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <in2teamssplitter:NameAndRating Name="{Binding Name, Mode=TwoWay}" Level="{Binding Level}"/>
+                    <in2teamssplitter:NameAndRating Name="{Binding Name, Mode=TwoWay}" Level="{Binding Level}" ButtonCommand="{Binding RemoveCommand}"/>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

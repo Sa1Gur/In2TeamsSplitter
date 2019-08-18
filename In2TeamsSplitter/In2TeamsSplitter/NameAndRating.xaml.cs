@@ -32,5 +32,13 @@ namespace In2TeamsSplitter
             get => (int)GetValue(LevelProperty);
             set => SetValue(LevelProperty, value);
         }
+
+        public static readonly BindableProperty ButtonCommandProperty = BindableProperty.Create(nameof(ButtonCommand), typeof(Command), typeof(NameAndRating), defaultBindingMode: BindingMode.TwoWay);
+
+        public Command ButtonCommand
+        {
+            get => (Command)GetValue(ButtonCommandProperty);
+            set => SetValue(ButtonCommandProperty, value);
+        }
     }
 }
