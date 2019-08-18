@@ -7,7 +7,7 @@ using Xamarin.Forms;
 namespace In2TeamsSplitter.Models
 {
     [Table("teammates")]
-    class TeamMateItem : INotifyPropertyChanged
+    public class TeamMateItem : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
