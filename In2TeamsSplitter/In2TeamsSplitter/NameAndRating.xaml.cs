@@ -40,5 +40,17 @@ namespace In2TeamsSplitter
             get => (Command)GetValue(ButtonCommandProperty);
             set => SetValue(ButtonCommandProperty, value);
         }
+
+        public static readonly BindableProperty ButtonTextProperty = BindableProperty.Create(nameof(ButtonText), typeof(string), typeof(NameAndRating), defaultBindingMode: BindingMode.TwoWay);
+        public string ButtonText
+        {
+            get => (string)GetValue(ButtonTextProperty);
+            set => SetValue(ButtonTextProperty, value);
+        }
+
+        private void OnStarTap(object sender, EventArgs e)
+        {
+            Level = ++Level % 4;
+        }
     }
 }

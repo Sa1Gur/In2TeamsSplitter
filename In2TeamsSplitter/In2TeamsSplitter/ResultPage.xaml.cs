@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -22,7 +17,7 @@ namespace In2TeamsSplitter
             Team1 = new ObservableCollection<Player>(t1);
             Team2 = new ObservableCollection<Player>(t2);
 
-            InitializeComponent();            
+            InitializeComponent();
         }
     }
 }

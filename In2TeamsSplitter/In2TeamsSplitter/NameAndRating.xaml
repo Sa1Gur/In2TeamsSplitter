@@ -15,8 +15,20 @@
         <ColumnDefinition Width="50" />
     </Grid.ColumnDefinitions>
     <Entry Grid.Column="0" Text="{Binding Name, Source={x:Reference _nameAndRate}}"  HorizontalOptions="FillAndExpand" />
-    <ffsvg:SvgCachedImage Grid.Column="1" Source="{Binding Level, Source={x:Reference _nameAndRate}, Converter={StaticResource SVGStatusConverter}, ConverterParameter = 1}" />
-    <ffsvg:SvgCachedImage Grid.Column="2" Source="{Binding Level, Source={x:Reference _nameAndRate}, Converter={StaticResource SVGStatusConverter}, ConverterParameter = 2}" />
-    <ffsvg:SvgCachedImage Grid.Column="3" Source="{Binding Level, Source={x:Reference _nameAndRate}, Converter={StaticResource SVGStatusConverter}, ConverterParameter = 3}" />
-    <Button Grid.Column="4" Text="-" Command="{Binding ButtonCommand, Source={x:Reference _nameAndRate}}" />
+    <ffsvg:SvgCachedImage Grid.Column="1" Source="{Binding Level, Source={x:Reference _nameAndRate}, Converter={StaticResource SVGStatusConverter}, ConverterParameter = 1}">
+        <ffsvg:SvgCachedImage.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnStarTap" />
+        </ffsvg:SvgCachedImage.GestureRecognizers>
+    </ffsvg:SvgCachedImage>
+    <ffsvg:SvgCachedImage Grid.Column="2" Source="{Binding Level, Source={x:Reference _nameAndRate}, Converter={StaticResource SVGStatusConverter}, ConverterParameter = 2}" >
+        <ffsvg:SvgCachedImage.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnStarTap" />
+        </ffsvg:SvgCachedImage.GestureRecognizers>
+    </ffsvg:SvgCachedImage>
+    <ffsvg:SvgCachedImage Grid.Column="3" Source="{Binding Level, Source={x:Reference _nameAndRate}, Converter={StaticResource SVGStatusConverter}, ConverterParameter = 3}" >
+        <ffsvg:SvgCachedImage.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnStarTap" />
+        </ffsvg:SvgCachedImage.GestureRecognizers>
+    </ffsvg:SvgCachedImage>
+    <Button Grid.Column="4" Text="{Binding ButtonText, Source={x:Reference _nameAndRate}}" Command="{Binding ButtonCommand, Source={x:Reference _nameAndRate}}" />
 </Grid>

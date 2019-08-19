@@ -32,7 +32,7 @@ namespace In2TeamsSplitter.ViewModels
         public TeamMatesViewModel()
         {
             AddNewTeamMateCommand = new Command(() => AddNewTeamMate());
-            SplitCommand = new Command(Split);
+            SplitCommand = new Command(() => Split.Splitter(TeamMateSquad));
 
             conn = new SQLiteConnection($@"{FileSystem.AppDataDirectory}/teammates.db3");
             TeamMateSquad = new ObservableCollection<TeamMateItem>(conn.Table<TeamMateItem>().ToList());
@@ -51,14 +51,13 @@ namespace In2TeamsSplitter.ViewModels
                 TeamMateSquad.Add(new TeamMateItem { Name = AddName, Level = AddLevel });
 
                 AddName = string.Empty;
+                AddLevel = uint.MinValue;
             }
             catch (Exception ex)
             {
                 Application.Current.MainPage.DisplayAlert("error", $"Failed to add {AddName}. Error: {ex.Message}", "Ok");
             }
         }
-
-        void Split() => In2TeamsSplitter.Split.Splitter(TeamMateSquad);
 
         private string _addName = string.Empty;
         public string AddName

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using FFImageLoading.Forms.Platform;
+using FFImageLoading.Svg.Forms;
 using Foundation;
 using UIKit;
 using Xamarin.Forms;
@@ -24,6 +25,7 @@ namespace In2TeamsSplitter.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             CachedImageRenderer.Init();
+            _ = typeof(SvgCachedImage);
             Forms.SetFlags("CollectionView_Experimental");//adding CollectionView support
 
             Forms.Init();

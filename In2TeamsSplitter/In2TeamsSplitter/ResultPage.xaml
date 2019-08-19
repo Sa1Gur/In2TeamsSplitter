@@ -14,14 +14,14 @@
         <CollectionView BindingContext="{x:Reference Name=_resultPage}" ItemsSource="{Binding Team1}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Label Text="{Binding Name}" />
+                    <Label Text="{Binding Name}" HorizontalTextAlignment="Center" />
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
         <CollectionView Grid.Column="1" BindingContext="{x:Reference Name=_resultPage}" ItemsSource="{Binding Team2}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Label Text="{Binding Name}" />
+                    <Label Text="{Binding Name}" HorizontalTextAlignment="Center" />
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
