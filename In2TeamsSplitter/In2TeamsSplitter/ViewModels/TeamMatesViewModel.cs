@@ -14,9 +14,11 @@ namespace In2TeamsSplitter.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public bool IsDataChanged<T>(T value1, T value2) => !EqualityComparer<T>.Default.Equals(value1, value2);        
+
         protected bool SetPropertyValue<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
         {
-            if (Equals(field, value)) return false;
+            if (IsDataChanged<T>(field, value)) return false;
 
             field = value;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
