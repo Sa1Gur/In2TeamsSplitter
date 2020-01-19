@@ -14,11 +14,9 @@ namespace In2TeamsSplitter.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public bool IsDataChanged<T>(T value1, T value2) => !EqualityComparer<T>.Default.Equals(value1, value2);        
-
         protected bool SetPropertyValue<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
         {
-            if (IsDataChanged<T>(field, value)) return false;
+            if (EqualityComparer<T>.Default.Equals(field, value)) return false;
 
             field = value;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -37,6 +35,7 @@ namespace In2TeamsSplitter.ViewModels
             SplitCommand = new Command(() => Split.Splitter(TeamMateSquad));
 
             conn = new SQLiteConnection($@"{FileSystem.AppDataDirectory}/teammates.db3");
+            conn.CreateTable<TeamMateItem>();
             TeamMateSquad = new ObservableCollection<TeamMateItem>(conn.Table<TeamMateItem>().ToList());
         }
 

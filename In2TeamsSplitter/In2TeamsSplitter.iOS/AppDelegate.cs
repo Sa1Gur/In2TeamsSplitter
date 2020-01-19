@@ -26,7 +26,7 @@ namespace In2TeamsSplitter.iOS
         {
             CachedImageRenderer.Init();
             _ = typeof(SvgCachedImage);
-            Forms.SetFlags("CollectionView_Experimental");//adding CollectionView support
+            //Forms.SetFlags("CollectionView_Experimental");//adding CollectionView support
 
             Forms.Init();
             LoadApplication(new App());

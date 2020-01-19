@@ -24,7 +24,7 @@ namespace In2TeamsSplitter.Droid
 
             CachedImageRenderer.Init(true);
             _ = typeof(SvgCachedImage);
-            Forms.SetFlags("CollectionView_Experimental");//adding CollectionView support
+            //Forms.SetFlags("CollectionView_Experimental");//adding CollectionView support
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             Forms.Init(this, savedInstanceState);
